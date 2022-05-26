@@ -14,19 +14,19 @@
 // }
 
 //////// loop example /////////////
-for(var i=1;i<=100;i++){
-    document.write(i+" ");
-    if(i%10==0){
-        document.write("<br>");
-    }
-}
+// for(var i=1;i<=100;i++){
+//     document.write(i+" ");
+//     if(i%10==0){
+//         document.write("<br>");
+//     }
+// }
 
-for(var i=1;i<=100;i=i+10){
-    for(var x=i; x<i+10;x++){
-        console.log(x," ");
-    }
-    console.log("<br>");
-}
+// for(var i=1;i<=100;i=i+10){
+//     for(var x=i; x<i+10;x++){
+//         console.log(x," ");
+//     }
+//     console.log("<br>");
+// }
 
 /////////// Palindrome Words /////////////////////
 
@@ -57,3 +57,82 @@ for(var i=1;i<=100;i=i+10){
 //     }
 // }
 
+
+//////////DATE AND TIME ///////////
+
+// var a= new Date();
+// console.log(a);
+// console.log(a.getDate());
+// console.log(a.getDay());
+// console.log(a.getTime()); /////Time since january first 1970
+// console.log(timeRN);
+// console.log(a.getFullYear());
+
+///////Function syntax
+
+// function name(){
+//     console.log('Muhib');
+// }
+
+// let namee=()=>{
+//     console.log("MMM");
+// }
+
+////// Events /////////
+
+{/* <a href="" onclick="var a ='hello'; alert(a)">Click</a> */}
+//// onmouseover()
+//// onmouseout()
+//// onmousemove
+//// 
+
+
+// let foo=()=>{
+//     alert("MMM");
+// }
+
+//// onFocus for inputs
+{/* <h1 href=""  onFocus="this.style.backgroundColor='yellow';" onFocus="alert('g')">Function foo on click</h1>
+    <h1 href=""  onmouseenter="this.style.color='green';" onmouseout="this.style.color='green';">Function foo on click</h1> */}
+
+    /////// form events
+// function checkAddress(id){
+//     if(document.getElementById(id).value===""){
+//         alert("Email Address Required");
+//     }
+//     else{
+//         alert("your email is "+document.getElementById(id).value);
+//     }
+// }
+    
+// function checkNumber(){
+//     var city;
+//     var numEntered=document.getElementById("num").value;
+    //// using switch
+    // switch(numEntered){
+    //     case '1':
+    //         city="karachi";
+    //         break;
+    //     case '2':
+    //         city="lahore";
+    //         break;
+    // }
+
+    //// using if-else
+    // if(numEntered==1){
+    //     city="Karachi";
+    // }
+    // else if(numEntered==2){
+    //     city="lah";
+    // }
+    // document.getElementById("city").value=city;
+    // // alert(city);
+    // console.log(city);
+
+
+    ////// Paragraph Events
+    function expandLoris() {
+        
+        var expandedPara= "Slow lorises are a group of several species of trepsirrhine primates which make up the genus Nycticebus. They have a round head, narrow snout, large eyes, and a variety of distinctive coloration patterns that are species-dependent. The hands and feet of slow lorises have several adaptations that give them a pincer-like grip and enable them to grasp branches for long periods of time. Slow lorises have a toxic bite, a rare trait among mammals.";
+        document.getElementById("slowLoris").innerHTML=expandedPara;
+    }
