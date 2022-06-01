@@ -131,8 +131,75 @@
 
 
     ////// Paragraph Events
-    function expandLoris() {
+    
+    // function expandLoris() {
         
-        var expandedPara= "Slow lorises are a group of several species of trepsirrhine primates which make up the genus Nycticebus. They have a round head, narrow snout, large eyes, and a variety of distinctive coloration patterns that are species-dependent. The hands and feet of slow lorises have several adaptations that give them a pincer-like grip and enable them to grasp branches for long periods of time. Slow lorises have a toxic bite, a rare trait among mammals.";
-        document.getElementById("slowLoris").innerHTML=expandedPara;
+    //     var expandedPara= "Slow lorises are a group of several species of trepsirrhine primates which make up the genus Nycticebus. They have a round head, narrow snout, large eyes, and a variety of distinctive coloration patterns that are species-dependent. The hands and feet of slow lorises have several adaptations that give them a pincer-like grip and enable them to grasp branches for long periods of time. Slow lorises have a toxic bite, a rare trait among mammals.";
+    //     document.getElementById("slowLoris").innerHTML=expandedPara;
+    // }
+
+    /////////CALCULATOR
+
+
+    // var display=document.getElementById('display');
+
+
+    // function displayNum(idd){
+    //     display.value += idd;
+    //     console.log(idd);
+    // }
+
+    // function clr(){
+    //     display.value="";
+    // }
+
+    // function getResult(){
+    //     var result= eval(display.value);
+    //     display.value=result;
+    //     console.log(result);
+    //     }
+
+
+    //////// TODO APP
+
+    function editt(e){
+        // var inp= document.getElementById('input-todo').value;
+        // // deleter(this);
+        // var inputt=createElement('input');
+        
+        // console.log("edit "+inp);
+        console.log(e.parentNode.childNodes[0]);
+        console.log(e.parentNode.firstChild);
+        var val =e.parentNode.firstChild.nodeValue;
+        var editValue=prompt("Edit value",val);
+        e.parentNode.firstChild.nodeValue=editValue;
     }
+   
+    function addToList(){
+        var list=document.getElementById('list');
+        var inp= document.getElementById('input-todo');
+        var li =document.createElement('li');
+        var todo=document.createTextNode(inp.value);
+        li.appendChild(todo);
+        list.appendChild(li);
+
+        var delBtn=document.createElement("button");
+        var dltText=document.createTextNode("Delete");
+        delBtn.appendChild(dltText);
+        li.appendChild(delBtn);
+        var editBtn=document.createElement("button");
+        var editText=document.createTextNode("Edit");
+        editBtn.appendChild(editText);
+        li.appendChild(editBtn);
+        delBtn.setAttribute("onclick","deleter(this)");
+        editBtn.setAttribute("onclick","editt(this)");
+        // console.log(inp);
+        // console.log(li);
+        // inp.value="";
+    }
+
+    function deleter(e){
+        e.parentNode.remove();
+    }
+
+   

@@ -1,0 +1,49 @@
+.main{
+    border: 1px solid black;
+    margin: 0 auto;
+    width: 150px;
+    padding: 10px;
+}
+#display{
+    width: 50%;
+    background-color: gray;
+    margin: 0 20px;
+}
+
+.clrBtn{
+    width: 45%;
+    align-items: center ;
+    margin: 0 25px;
+}
+.btnDiv{
+    /* display: flex; */
+    margin: 0 15px;
+}
+
+.main-todo{
+    margin: 0 auto;
+    border: 1px solid black;
+    width: 50%;
+    /* display: flex; */
+    background-color: aliceblue;
+    /* box-shadow: -5px -5px #777777; */
+}
+ 
+.div1{
+    /* align-items: center; */
+    margin: 5px 80px;
+    /* margin-top: 10px; */
+    /* font-size: large; */
+}
+.div1>input{
+    width: 400px;
+    font-size: large;
+}
+.div1>button{
+    /* width: 400px; */
+    font-size: large;
+}
+
+.div2{
+    /* line-break: loose; */
+}
