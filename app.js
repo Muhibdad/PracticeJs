@@ -162,44 +162,114 @@
 
     //////// TODO APP
 
-    function editt(e){
-        // var inp= document.getElementById('input-todo').value;
-        // // deleter(this);
-        // var inputt=createElement('input');
+    // function editt(e){
+    //     // var inp= document.getElementById('input-todo').value;
+    //     // // deleter(this);
+    //     // var inputt=createElement('input');
         
-        // console.log("edit "+inp);
-        console.log(e.parentNode.childNodes[0]);
-        console.log(e.parentNode.firstChild);
-        var val =e.parentNode.firstChild.nodeValue;
-        var editValue=prompt("Edit value",val);
-        e.parentNode.firstChild.nodeValue=editValue;
-    }
+    //     // console.log("edit "+inp);
+    //     console.log(e.parentNode.childNodes[0]);
+    //     console.log(e.parentNode.firstChild);
+    //     var val =e.parentNode.firstChild.nodeValue;
+    //     var editValue=prompt("Edit value",val);
+    //     e.parentNode.firstChild.nodeValue=editValue;
+    // }
    
-    function addToList(){
-        var list=document.getElementById('list');
-        var inp= document.getElementById('input-todo');
-        var li =document.createElement('li');
-        var todo=document.createTextNode(inp.value);
-        li.appendChild(todo);
-        list.appendChild(li);
+    // function addToList(){
+    //     var list=document.getElementById('list');
+    //     var inp= document.getElementById('input-todo');
+    //     var li =document.createElement('li');
+    //     var todo=document.createTextNode(inp.value);
+    //     li.appendChild(todo);
+    //     list.appendChild(li);
 
-        var delBtn=document.createElement("button");
-        var dltText=document.createTextNode("Delete");
-        delBtn.appendChild(dltText);
-        li.appendChild(delBtn);
-        var editBtn=document.createElement("button");
-        var editText=document.createTextNode("Edit");
-        editBtn.appendChild(editText);
-        li.appendChild(editBtn);
-        delBtn.setAttribute("onclick","deleter(this)");
-        editBtn.setAttribute("onclick","editt(this)");
-        // console.log(inp);
-        // console.log(li);
-        // inp.value="";
-    }
+    //     var delBtn=document.createElement("button");
+    //     var dltText=document.createTextNode("Delete");
+    //     delBtn.appendChild(dltText);
+    //     li.appendChild(delBtn);
+    //     var editBtn=document.createElement("button");
+    //     var editText=document.createTextNode("Edit");
+    //     editBtn.appendChild(editText);
+    //     li.appendChild(editBtn);
+    //     delBtn.setAttribute("onclick","deleter(this)");
+    //     editBtn.setAttribute("onclick","editt(this)");
+    //     // console.log(inp);
+    //     // console.log(li);
+    //     // inp.value="";
+    // }
 
-    function deleter(e){
-        e.parentNode.remove();
-    }
+    // function deleter(e){
+    //     e.parentNode.remove();
+    // }
 
    
+
+
+    ////////////????? QUIZ ////////////
+
+    var questionsArray=[
+        {
+            queston: "Full Form Of RAM?",
+            answer: "Random Access Memory",
+            options:[
+                "Random Access Memory",
+                "Random Accss Memory",
+                "Random Acess Memory",
+                "avc"
+            ]
+        },
+        {
+            queston: "Full Form Of CPU?",
+            answer: "Central Processing Unit",
+            options:[
+                "Central Processing Unit",
+                "Random Accss Memory",
+                "Random Acess Memory",
+                "Random cess Memory"
+            ]
+        },{
+            queston: "Full Form Of USB?",
+            answer: "Universal Serial Bus",
+            options:[
+                "Universal Serial Bus",
+                "Random Accss Memory",
+                "Random Acess Memory",
+                "Random cess Memory"
+            ]
+        }
+    ]
+
+    var questionNumber=0;
+    let score=0;
+
+    function getQuestion(e){
+        var question=document.getElementById('question');
+        question.innerHTML=questionsArray[e].queston;
+        
+        var options=document.getElementsByClassName("options");
+        for(var i=0;i<options.length;i++){
+            options[i].innerHTML=questionsArray[e].options[i];
+        }
+    }
+    function next(){
+        questionNumber++;
+        if(questionNumber==3){
+            questionNumber=0;
+        }
+        getQuestion(questionNumber);
+        console.log(questionNumber);
+    }
+
+    function checkAns(e){
+        if(e.innerHTML==questionsArray[questionNumber].answer){
+            alert("correct");
+        }
+        else{
+            alert("wrong");
+        }
+        console.log(questionNumber+"fromcheckAns");
+        
+    }
+    
+    
+    
